@@ -28,6 +28,7 @@ public class SubarrayDistinctValues49 {
                 map.put(a[i], map.get(a[i]) - 1);
             }
         }
+        map.clear();
         for (int i = 0; i < n; i++) {
             map.put(a[i], map.getOrDefault(a[i], 0) + 1);
         }
