@@ -15,7 +15,7 @@ class Pair9 {
     }
     @Override
     public int hashCode() {
-        return index % 10;
+        return index;
     }
     @Override
     public String toString() {
