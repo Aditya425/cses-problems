@@ -1,4 +1,5 @@
 import java.util.*;
+import java.math.BigInteger;
 
 public class ArrayDivision50 {
     public static void main(String[] args) {
@@ -12,28 +13,28 @@ public class ArrayDivision50 {
             max = Math.max(max, a[i]);
         }
 
-        long low = max;
+        BigInteger low = BigInteger.valueOf(max);
         long h = (long) 1e18;
-        long high = h;
-        long ans = h;
+        BigInteger high = BigInteger.valueOf(h);
+        BigInteger ans = BigInteger.valueOf(h);
 
-        while (low <= high) {
-            long mid = (low + high) / 2;
+        while (low.longValue() <= high.longValue()) {
+            BigInteger mid = low.add(high).divide(BigInteger.valueOf(2));
             long blocks = 1;
-            int sum = 0;
+            BigInteger sum = BigInteger.valueOf(0);
             for (int i = 0; i < n; i++) {
-                if (sum + a[i] > mid) {
-                    sum = 0;
+                if (sum.add(BigInteger.valueOf(a[i])).longValue() > mid.longValue()) {
+                    sum = BigInteger.valueOf(0);
                     blocks++;
                 }
-                sum += a[i];
+                sum = sum.add(BigInteger.valueOf(a[i]));
             }
 
             if (blocks > k) {
-                low = mid + 1;
+                low = mid.add(BigInteger.valueOf(1));
             } else {
-                ans = Math.min(ans, mid);
-                high = mid - 1;
+                ans = mid;
+                high = mid.subtract(BigInteger.valueOf(1));
             }
         }
 
