@@ -7,16 +7,16 @@ class Pair9 {
         this.val = val;
         this.index = index;
     }
-    @Override
-    public boolean equals(Object o) {
-        Pair9 p = (Pair9) o;
-        System.out.println(this.val == p.val && this.index == p.index);
-        return this.val == p.val && this.index == p.index;
-    }
-    @Override
-    public int hashCode() {
-        return index;
-    }
+    // @Override
+    // public boolean equals(Object o) {
+    //     Pair9 p = (Pair9) o;
+    //     System.out.println(this.val == p.val && this.index == p.index);
+    //     return this.val == p.val && this.index == p.index;
+    // }
+    // @Override
+    // public int hashCode() {
+    //     return index;
+    // }
     @Override
     public String toString() {
         return "Pair9 [val=" + val + ", index=" + index + "]";
@@ -33,7 +33,12 @@ public class SlidingMedian51 {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        SortedSet<Pair9> set = new TreeSet<>((d, b) -> Integer.compare(d.val, b.val));
+        SortedSet<Pair9> set = new TreeSet<>((d, b) -> {
+            if (d.val == b.val) {
+                return Integer.compare(d.index, b.index);
+            }
+            return Integer.compare(d.val, b.val);
+        });
 
         for (int i = 0; i < k; i++) {
             set.add(new Pair9(a[i], i));
