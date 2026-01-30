@@ -15,7 +15,7 @@ import java.util.*;
 public class MissingNumber02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //use long as the size of input is more than integer limit
+        //while n itself is less than integer limit i.e n is upto 10^5 (integer limit is 10^10), the reason we use long instead of int is that when we do n*(n+1) then the result will be 10^10 and this intermediate result will be stored in int which will cause integer overflow. So we use long
         long n = sc.nextLong();
         long sum = 0;
         //input the (n-1) integers
