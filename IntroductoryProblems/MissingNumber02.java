@@ -27,5 +27,6 @@ public class MissingNumber02 {
         //formula value - sum of (n-1)
         long ans = (n * (n + 1) / 2) - sum;
         System.out.println(ans);
+        sc.close();
     }
 }
