@@ -1,4 +1,7 @@
 /*
+https://www.youtube.com/watch?v=r21q_MOiMbo&list=PLcXpkI9A-RZLNzhkMB3SyNfagr1LzIGrp&index=2
+https://cses.fi/problemset/task/1083
+
 we're given a list of numbers from 1,2 to n but unordered and one of the number is missing. we've to find the missing number. Eg: 
 5 (first input is the number of numbers)
 2 3 1 5 (4 numbers will be given (n-1) where one number is missing)
